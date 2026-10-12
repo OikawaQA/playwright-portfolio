@@ -7,6 +7,7 @@ export class HeaderComponent {
   readonly signupLoginButton: Locator;
   readonly contactUsButton: Locator;
   readonly testCasesButton: Locator;
+  readonly productsButton: Locator;
   constructor(page: Page) {
     this.page = page;
 
@@ -18,6 +19,7 @@ export class HeaderComponent {
     this.signupLoginButton = headerContainer.getByRole('link', { name: 'Signup / Login' });
     this.contactUsButton = headerContainer.getByRole('link', { name: 'Contact us' });
     this.testCasesButton = headerContainer.getByRole('link', { name: 'Test Cases' });
+    this.productsButton = headerContainer.getByRole('link', { name: 'Products' });
   }
 
   async clickHome() {
@@ -30,6 +32,10 @@ export class HeaderComponent {
 
   async clickContactUs() {
     await this.contactUsButton.click();
+  }
+
+  async clickProducts() {
+    await this.productsButton.click();
   }
 
   async clickTestCases() {
